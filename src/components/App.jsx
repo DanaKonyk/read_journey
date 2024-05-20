@@ -5,6 +5,7 @@ import RegistrationPage from '../pages/Registration/RegistrationPage';
 import LoginPage from '../pages/Login/LoginPage';
 import LibraryPage from '../pages/Library/LibraryPage';
 import ReadingPage from '../pages/Reading/ReadingPage';
+import RecommendedPage from '../pages/Recommended/RecommendedPage';
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
           <Route index element={<HomePage />} />
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/recommended" element={<RecommendedPage />} />
           <Route path="/library" element={<LibraryPage />} />
           <Route path="/reading" element={<ReadingPage />} />
         </Route>
