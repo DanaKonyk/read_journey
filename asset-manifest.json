@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/read_journey/static/css/main.7acaea2f.css",
-    "main.js": "/read_journey/static/js/main.c01a768c.js",
+    "main.css": "/read_journey/static/css/main.63045e7f.css",
+    "main.js": "/read_journey/static/js/main.88611389.js",
+    "static/media/Gilroy-Medium.woff": "/read_journey/static/media/Gilroy-Medium.2bc7f5d7ea77ee1bddb3.woff",
+    "static/media/Gilroy-Bold.woff": "/read_journey/static/media/Gilroy-Bold.5fb38b9fa452b5814397.woff",
+    "static/media/sprite.svg": "/read_journey/static/media/sprite.28be750725bd3cdb5db827b55a478917.svg",
     "index.html": "/read_journey/index.html",
-    "main.7acaea2f.css.map": "/read_journey/static/css/main.7acaea2f.css.map",
-    "main.c01a768c.js.map": "/read_journey/static/js/main.c01a768c.js.map"
+    "main.63045e7f.css.map": "/read_journey/static/css/main.63045e7f.css.map",
+    "main.88611389.js.map": "/read_journey/static/js/main.88611389.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.c01a768c.js"
+    "static/css/main.63045e7f.css",
+    "static/js/main.88611389.js"
   ]
 }
