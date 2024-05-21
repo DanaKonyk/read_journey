@@ -94,7 +94,6 @@ export const EyeBtn = styled.button`
 `;
 
 export const BtnSubmit = styled.button`
-  //   margin-block-start: 12px;
   margin-inline-end: 12px;
   padding: 12px 25px;
 
@@ -110,7 +109,6 @@ export const BtnSubmit = styled.button`
 
   @media screen and (min-width: 768px) {
     max-width: 225px;
-    // margin-block-start: 68px;
     margin-inline-end: 20px;
     padding: 16px 54px span {
       font-size: 20px;
@@ -157,6 +155,6 @@ export const BtnLinkWrap = styled.div`
   margin-top: 20px;
 
   @media screen and (min-width: 768px) {
-    margin-top: 82px;
+    margin-top: 72px;
   }
 `;

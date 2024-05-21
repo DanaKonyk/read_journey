@@ -9,6 +9,7 @@ import {
 } from './RegistrationPage.styled';
 import icon from '../../images/sprite.svg';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
+import HeroImage from 'components/HeroImage/HeroImage';
 
 const RegistrationPage = () => {
   return (
@@ -25,6 +26,7 @@ const RegistrationPage = () => {
         </Text>
         <RegisterForm />
       </FormWrap>
+      <HeroImage />
     </Wrapper>
   );
 };

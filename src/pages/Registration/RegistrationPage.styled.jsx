@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   @media screen and (min-width: 1439px) {
     flex-direction: row;
+    padding: 22px;
   }
 `;
 
@@ -26,9 +27,10 @@ export const FormWrap = styled.div`
     padding: 40px 168px 214px 64px;
   }
   @media screen and (min-width: 1439px) {
-    padding: 64px;
+    padding: 54px;
     max-width: 600px;
     margin-right: 16px;
+    max-height: 729px;
   }
 `;
 
@@ -43,7 +45,7 @@ export const LogoWrap = styled.div`
     }
 
     @media screen and (min-width: 1439px) {
-      margin-bottom: 107px;
+      margin-bottom: 80px;
     }
   }
 `;
