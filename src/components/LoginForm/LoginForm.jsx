@@ -87,7 +87,7 @@ const LoginForm = () => {
             <BtnSubmit type="submit">
               <span>Log in</span>
             </BtnSubmit>
-            <AuthLink to="/login">Don’t have an account?</AuthLink>
+            <AuthLink to="/register">Don’t have an account?</AuthLink>
           </BtnLinkWrap>
         </StyledForm>
       )}
