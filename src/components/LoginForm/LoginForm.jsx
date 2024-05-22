@@ -13,6 +13,10 @@ import {
 } from './LoginForm.styled';
 import icon from '../../images/sprite.svg';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { logIn } from '../../redux/auth/operations';
+import { Notify } from 'notiflix';
 
 const emailRegExp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
@@ -30,14 +34,28 @@ const schema = Yup.object().shape({
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const togglePassword = () => {
     setShowPassword(prevState => !prevState);
   };
+
+  const handleSubmit = async (values, { resetForm }) => {
+    try {
+      await dispatch(logIn(values));
+      resetForm();
+      navigate('/recommended');
+    } catch (error) {
+      Notify.failure('Wrong email or password. Please try again');
+    }
+  };
+
   return (
     <Formik
       initialValues={{ name: '', email: '', password: '' }}
       validationSchema={schema}
+      onSubmit={handleSubmit}
     >
       {({ errors, touched }) => (
         <StyledForm>

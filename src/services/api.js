@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const instance = axios.create({
-  baseUrl: 'https://readjourney.b.goit.study/api',
+  baseURL: 'https://readjourney.b.goit.study/api',
 });
 
 export const setToken = token => {

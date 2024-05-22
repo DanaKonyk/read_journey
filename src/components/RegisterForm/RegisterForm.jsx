@@ -13,6 +13,10 @@ import {
 } from './RegisterForm.styled';
 import icon from '../../images/sprite.svg';
 import { useState } from 'react';
+import { Notify } from 'notiflix';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { register } from '../../redux/auth/operations';
 
 const emailRegExp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
@@ -34,14 +38,33 @@ const schema = Yup.object().shape({
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const togglePassword = () => {
     setShowPassword(prevState => !prevState);
   };
+
+  const handleSubmit = async (values, { resetForm }) => {
+    try {
+      await dispatch(register(values));
+      resetForm();
+      navigate('/recommended');
+    } catch (error) {
+      console.log(error.message);
+      if (error.response && error.response.status === 409) {
+        Notify.failure('Such email already exists');
+      } else {
+        Notify.failure('Something went wrong. Please try again');
+      }
+    }
+  };
+
   return (
     <Formik
       initialValues={{ name: '', email: '', password: '' }}
       validationSchema={schema}
+      onSubmit={handleSubmit}
     >
       {({ errors, touched }) => (
         <StyledForm>
