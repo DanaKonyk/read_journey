@@ -14,7 +14,7 @@ import {
 import icon from '../../images/sprite.svg';
 import { useState } from 'react';
 
-const emailRegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const emailRegExp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
 const schema = Yup.object().shape({
   name: Yup.string()
@@ -26,8 +26,8 @@ const schema = Yup.object().shape({
     .email('Enter a valid Email')
     .required('Email is required'),
   password: Yup.string()
-    .matches(/^(?=.*[a-z])/, 'Password must meet the requirements*')
-    .min(8, 'Password must be at least 6 characters')
+    .matches(/^(?=.*[a-z])/, 'Password must meet the requirements')
+    .min(8, 'Password must be at least 7 characters')
     .max(64, 'Password must be no more than 16 characters')
     .required('Password is required'),
 });
