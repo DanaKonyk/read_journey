@@ -10,8 +10,7 @@ export const HeaderWrap = styled.header`
   padding: 11px 15px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-between;
   @media screen and (min-width: 768px) {
     padding: 20px 16px;
     height: 74px;
@@ -21,16 +20,6 @@ export const HeaderWrap = styled.header`
   @media screen and (min-width: 1440px) {
     width: 1216px;
     margin-left: 100px;
-  }
-`;
-
-export const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  a {
-    text-decoration: none;
-    color: ${color.white};
   }
 `;
 
@@ -59,5 +48,22 @@ export const TextLogo = styled(Link)`
     color: ${color.white};
     margin-left: 4px;
     text-decoration: none;
+  }
+`;
+
+export const BtnLogOut = styled.button`
+  @media screen and (max-width: 767px) {
+    padding: 10px 20px;
+    display: none;
+  }
+  margin-right: 0px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 1px solid;
+  border-color: ${color.liteWhite};
+  color: ${color.white};
+  background-color: ${color.lightBlack};
+  @media screen and (min-width: 1440px) {
+    margin-left: 16px;
   }
 `;
