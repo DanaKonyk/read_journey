@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom';
-import { Nav } from './UserNav.styled';
+import { Link, Nav } from './UserNav.styled';
 
-const UserNav = () => {
+const UserNav = ({ onClose }) => {
   return (
-    <Nav>
+    <Nav onClick={onClose}>
       <Link to="recommended">Home</Link>
       <Link to="library">My library</Link>
     </Nav>

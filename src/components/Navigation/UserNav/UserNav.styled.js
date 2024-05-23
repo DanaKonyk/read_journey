@@ -20,6 +20,11 @@ export const Nav = styled.nav`
 `;
 
 export const Link = styled(NavLink)`
+  @media screen and (max-width: 768px) {
+    color: ${color.grey};
+    margin-right: 0;
+  }
+  position: relative;
   margin-right: 40px;
   font-weight: 500;
   font-size: 16px;
@@ -28,4 +33,21 @@ export const Link = styled(NavLink)`
   &:last-child {
     margin-right: 0;
   }
+
+  transition: color 350ms linear;
+
+  &:is(.active, :hover, :focus) {
+    color: ${color.white};
+  }
+
+  &.active::after,
+  &:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: ${color.blue};
+    border-radius: 12px;
 `;
