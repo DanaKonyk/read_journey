@@ -5,8 +5,6 @@ const UserMenu = () => {
   const { user, isLoggedIn } = useAuth();
   const userName = user && user.name ? user.name.split('') : '';
 
-  console.log(user);
-
   return (
     <UserWrap>{isLoggedIn && <NameWrap>{userName[0]}</NameWrap>}</UserWrap>
   );
