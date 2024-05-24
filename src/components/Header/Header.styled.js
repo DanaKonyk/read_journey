@@ -5,21 +5,16 @@ import color from '../../stylesheet/GlobalColors';
 export const HeaderWrap = styled.header`
   background: ${color.lightBlack};
   border-radius: 15px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin: 20px 20px 10px 20px;
   padding: 11px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   @media screen and (min-width: 768px) {
     padding: 20px 16px;
     height: 74px;
-    margin-bottom: 16px;
-    margin-top: 32px;
-  }
-  @media screen and (min-width: 1440px) {
-    width: 1216px;
-    margin-left: 100px;
+    margin: 32px 32px 16px 32px;
   }
 `;
 

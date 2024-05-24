@@ -85,3 +85,25 @@ export const Link = styled(NavLink)`
     color: ${color.white};
   }
 `;
+
+export const QuoteWrap = styled.div`
+  padding: 14px 20px;
+
+  border-radius: 12px;
+  background-color: ${color.darkGray};
+
+  display: flex;
+  gap: 14px;
+
+  font-size: 14px;
+  line-height: 1.285;
+  color: ${color.grey};
+
+  span {
+    color: ${color.white};
+  }
+
+  @media screen and (max-width: 1439px) {
+    display: none;
+  }
+`;
