@@ -1,5 +1,5 @@
-const { default: styled } = require('styled-components');
-const { default: color } = require('stylesheet/GlobalColors');
+import styled from 'styled-components';
+import color from 'stylesheet/GlobalColors';
 
 export const Wrap = styled.div`
   margin: 10px 20px;

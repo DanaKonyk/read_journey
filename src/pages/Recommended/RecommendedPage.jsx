@@ -1,11 +1,21 @@
+import BookList from 'components/Recommended/BookList/BookList';
 import Dashboard from 'components/Recommended/Dashboard/Dashboard';
+import styled from 'styled-components';
 
 const RecommendedPage = () => {
   return (
-    <div>
+    <Wrap>
       <Dashboard />
-    </div>
+      <BookList />
+    </Wrap>
   );
 };
+
+const Wrap = styled.div`
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    gap: 16px;
+  }
+`;
 
 export default RecommendedPage;
