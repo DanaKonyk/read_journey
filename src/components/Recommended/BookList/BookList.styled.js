@@ -12,16 +12,6 @@ export const Wrap = styled.div`
     padding: 40px;
   }
 
-  h3 {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1;
-
-    @media screen and (min-width: 768px) {
-      font-size: 28px;
-      line-height: 1.142;
-    }
-  }
   @media screen and (min-width: 1440px) {
     inline-size: 100%;
   }
@@ -36,6 +26,13 @@ export const BtnWrap = styled.div`
     font-size: 20px;
     font-weight: 700;
     line-height: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    h3 {
+      font-size: 28px;
+      line-height: 1.142;
+    }
   }
 
   div {
