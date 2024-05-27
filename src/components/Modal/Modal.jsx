@@ -28,11 +28,14 @@ const customStyles = {
 Modal.setAppElement('#modal-root');
 const modalRoot = document.querySelector('#modal-root');
 
-const ModalBody = ({ isOpen, isClose, children }) => {
+const ModalBody = ({ isOpen, onRequestClose, children }) => {
+  if (!modalRoot) {
+    return null;
+  }
   return createPortal(
-    <Modal style={customStyles} isOpen={isOpen} onRequestClose={isClose}>
+    <Modal style={customStyles} isOpen={isOpen} onRequestClose={onRequestClose}>
       <ModalWrap>
-        <BtnClose type="button" onClick={isClose}>
+        <BtnClose type="button" onClick={onRequestClose}>
           <svg width="22" height="22">
             <use xlinkHref={`${icon}#close`} />
           </svg>

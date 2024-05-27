@@ -1,5 +1,7 @@
+const { default: Dashboard } = require('components/Library/Dashboard');
+
 const LibraryPage = () => {
-  return <div>LibraryPage</div>;
+  return <Dashboard />;
 };
 
 export default LibraryPage;

@@ -14,7 +14,6 @@ const RecommendedPage = () => {
 const Wrap = styled.div`
   @media screen and (min-width: 1440px) {
     display: flex;
-    gap: 16px;
   }
 `;
 
