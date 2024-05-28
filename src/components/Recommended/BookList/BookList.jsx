@@ -35,7 +35,7 @@ const BookList = () => {
   return (
     <Wrap>
       <BtnWrap>
-        <h3>Recommended</h3>
+        <h2>Recommended</h2>
         <div>
           <BtnMove type="button" onClick={handleBack}>
             <svg width="20" height="20">

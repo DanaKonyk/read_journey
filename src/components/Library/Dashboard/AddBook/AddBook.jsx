@@ -8,7 +8,7 @@ import {
 import { ErrorMessage, Form, Formik } from 'formik';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addNewBook } from '../../../redux/books/operations';
+import { addNewBook } from '../../../../redux/books/operations';
 import * as Yup from 'yup';
 import ModalBody from 'components/Modal/Modal';
 import BookIsAdded from 'components/Notification/BookIsAdded';
