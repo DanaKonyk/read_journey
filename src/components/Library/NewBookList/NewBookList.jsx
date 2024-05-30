@@ -7,6 +7,12 @@ import Select from 'react-select';
 import { useBook } from 'hooks/useBook';
 import NewBookItem from './NewBookItem/NewBookItem';
 import bookIcon from '../../../images/book.png';
+import {
+  BtnWrap,
+  LibraryList,
+  ListWrap,
+  StyledSelect,
+} from './NewBookList.styled';
 
 const NewBookList = () => {
   const [bookFilter, setbookFilter] = useState('all');
@@ -28,9 +34,10 @@ const NewBookList = () => {
   }, [dispatch, selectBook]);
 
   const visible = visibleBook(selectBook, newBooks);
+
   return (
     <>
-      <div>
+      <BtnWrap>
         <h2>My Library</h2>
         <Select
           classNamePrefix="custom-select"
@@ -41,14 +48,14 @@ const NewBookList = () => {
           onChange={handleChange}
           isSearchable={false}
         />
-      </div>
-      <div>
+      </BtnWrap>
+      <ListWrap>
         {newBooks?.length !== 0 ? (
-          <ul>
+          <LibraryList>
             {visible.map(book => (
-              <NewBookItem key={book._id} book={book} />
+              <NewBookItem key={book._id} books={book} />
             ))}
-          </ul>
+          </LibraryList>
         ) : (
           <div>
             <img src={bookIcon} alt="book" />
@@ -58,7 +65,7 @@ const NewBookList = () => {
             </p>
           </div>
         )}
-      </div>
+      </ListWrap>
     </>
   );
 };

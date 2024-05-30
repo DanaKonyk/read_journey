@@ -53,7 +53,7 @@ const bookSlice = createSlice({
         );
       })
       .addCase(fetchOwnBook.fulfilled, (state, action) => {
-        state.newBooks.push(action.payload);
+        state.newBooks = action.payload;
       })
       .addCase(fetchBookInfo.fulfilled, (state, action) => {
         state.readBooks = action.payload;
