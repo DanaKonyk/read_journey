@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import color from 'stylesheet/GlobalColors';
-import Select from 'react-select';
 
 export const BtnWrap = styled.div`
   display: flex;
