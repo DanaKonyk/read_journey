@@ -7,12 +7,7 @@ import Select from 'react-select';
 import { useBook } from 'hooks/useBook';
 import NewBookItem from './NewBookItem/NewBookItem';
 import bookIcon from '../../../images/book.png';
-import {
-  BtnWrap,
-  LibraryList,
-  ListWrap,
-  StyledSelect,
-} from './NewBookList.styled';
+import { BtnWrap, LibraryList, ListWrap } from './NewBookList.styled';
 
 const NewBookList = () => {
   const [bookFilter, setbookFilter] = useState('all');
