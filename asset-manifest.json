@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/read_journey/static/css/main.3bcc1f66.css",
-    "main.js": "/read_journey/static/js/main.cfab0dc6.js",
+    "main.js": "/read_journey/static/js/main.58482939.js",
     "static/media/iPhone15desc-2x-min.png": "/read_journey/static/media/iPhone15desc-2x-min.887f225407408dbc748e.png",
     "static/media/iPhone-Black-des.png": "/read_journey/static/media/iPhone-Black-des.bb568ef79d9ac2b80182.png",
     "static/media/iPhone15mob-2x-min.png": "/read_journey/static/media/iPhone15mob-2x-min.27fb9c746e40259ac1dc.png",
@@ -9,13 +9,14 @@
     "static/media/Gilroy-Medium.woff": "/read_journey/static/media/Gilroy-Medium.2bc7f5d7ea77ee1bddb3.woff",
     "static/media/Gilroy-Bold.woff": "/read_journey/static/media/Gilroy-Bold.5fb38b9fa452b5814397.woff",
     "static/media/iPhone15mob- 1x-min.png": "/read_journey/static/media/iPhone15mob- 1x-min.fecb12b75d22372fc71c.png",
+    "static/media/no-image-book.png": "/read_journey/static/media/no-image-book.56d8d54a33506080af53.png",
     "static/media/sprite.svg": "/read_journey/static/media/sprite.f9cf84720a762bb759a56a1578430b4a.svg",
     "index.html": "/read_journey/index.html",
     "main.3bcc1f66.css.map": "/read_journey/static/css/main.3bcc1f66.css.map",
-    "main.cfab0dc6.js.map": "/read_journey/static/js/main.cfab0dc6.js.map"
+    "main.58482939.js.map": "/read_journey/static/js/main.58482939.js.map"
   },
   "entrypoints": [
     "static/css/main.3bcc1f66.css",
-    "static/js/main.cfab0dc6.js"
+    "static/js/main.58482939.js"
   ]
 }
