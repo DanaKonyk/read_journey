@@ -122,3 +122,15 @@ export const deleteProgress = createAsyncThunk(
     }
   }
 );
+
+export const getOneBook = createAsyncThunk(
+  'books/getOneBook',
+  async ({ _id }, { rejectWithValue }) => {
+    try {
+      const { data } = await instance.get(`/books/${_id}`);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

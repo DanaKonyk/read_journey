@@ -8,6 +8,7 @@ import {
   fetchBooks,
   fetchOwnBook,
   finishRead,
+  getOneBook,
   startRead,
 } from './operations.js';
 
@@ -67,6 +68,10 @@ const bookSlice = createSlice({
       .addCase(deleteProgress.fulfilled, (state, action) => {
         state.readBooks = action.payload;
       })
+      .addCase(getOneBook.fulfilled, (state, action) => {
+        state.newBooks = [...state.newBooks, action.payload];
+        state.isLoading = false;
+      })
       .addMatcher(
         isAnyOf(
           fetchBooks.pending,
@@ -77,7 +82,8 @@ const bookSlice = createSlice({
           fetchBookInfo.pending,
           startRead.pending,
           finishRead.pending,
-          deleteProgress.pending
+          deleteProgress.pending,
+          getOneBook.pending
         ),
         pending
       )
@@ -91,7 +97,8 @@ const bookSlice = createSlice({
           fetchBookInfo.rejected,
           startRead.rejected,
           finishRead.rejected,
-          deleteProgress.rejected
+          deleteProgress.rejected,
+          getOneBook.rejected
         ),
         rejected
       );

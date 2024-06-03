@@ -7,13 +7,11 @@ const BookItem = ({ book }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
-    console.log('Modal is opening');
     setIsModalOpen(true);
     document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
-    console.log('Modal is closing');
     setIsModalOpen(false);
     document.body.style.overflow = '';
   };

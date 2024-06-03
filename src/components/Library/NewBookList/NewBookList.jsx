@@ -8,6 +8,7 @@ import { useBook } from 'hooks/useBook';
 import NewBookItem from './NewBookItem/NewBookItem';
 import bookIcon from '../../../images/book.png';
 import { BtnWrap, LibraryList, ListWrap } from './NewBookList.styled';
+import { Wrap } from 'components/Recommended/BookList/BookList.styled';
 
 const NewBookList = () => {
   const [bookFilter, setbookFilter] = useState('all');
@@ -31,7 +32,7 @@ const NewBookList = () => {
   const visible = visibleBook(selectBook, newBooks);
 
   return (
-    <>
+    <Wrap>
       <BtnWrap>
         <h2>My Library</h2>
         <Select
@@ -61,7 +62,7 @@ const NewBookList = () => {
           </div>
         )}
       </ListWrap>
-    </>
+    </Wrap>
   );
 };
 
