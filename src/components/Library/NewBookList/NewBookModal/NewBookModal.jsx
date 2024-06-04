@@ -10,7 +10,7 @@ const NewBookModal = ({ books }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    dispatch(getOneBook(books._id));
+    dispatch(getOneBook({ _id: books._id }));
     navigate('/reading');
   };
   return (

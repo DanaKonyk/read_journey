@@ -59,19 +59,20 @@ const bookSlice = createSlice({
       .addCase(fetchBookInfo.fulfilled, (state, action) => {
         state.readBooks = action.payload;
       })
-      .addCase(startRead.fulfilled, (state, action) => {
-        state.readBooks = action.payload;
-      })
-      .addCase(finishRead.fulfilled, (state, action) => {
-        state.readBooks = action.payload;
-      })
       .addCase(deleteProgress.fulfilled, (state, action) => {
         state.readBooks = action.payload;
       })
-      .addCase(getOneBook.fulfilled, (state, action) => {
-        state.newBooks = [...state.newBooks, action.payload];
-        state.isLoading = false;
-      })
+      .addMatcher(
+        isAnyOf(
+          getOneBook.fulfilled,
+          startRead.fulfilled,
+          finishRead.fulfilled
+        ),
+        (state, action) => {
+          state.readBooks = action.payload;
+          state.isLoading = false;
+        }
+      )
       .addMatcher(
         isAnyOf(
           fetchBooks.pending,

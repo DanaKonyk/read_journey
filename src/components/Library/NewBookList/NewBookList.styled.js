@@ -6,10 +6,17 @@ export const BtnWrap = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  h3 {
+  h2 {
     font-size: 20px;
     font-weight: 700;
     line-height: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    h2 {
+      font-size: 28px;
+      line-height: 1.142;
+    }
   }
 `;
 

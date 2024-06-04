@@ -10,6 +10,9 @@ import { ErrorMessage, Form, Formik } from 'formik';
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { ProgressWrap } from './StartForm.styled';
+import { useBook } from 'hooks/useBook';
+import { useDispatch } from 'react-redux';
+import { finishRead, startRead } from '../../../../redux/books/operations';
 
 const validationSchema = Yup.object({
   pages: Yup.number()
@@ -21,9 +24,29 @@ const validationSchema = Yup.object({
 
 const StartForm = () => {
   const [isReading, setIsReading] = useState(false);
+  const dispatch = useDispatch();
+  const { readBooks } = useBook();
+  const bookId = readBooks._id;
+
+  console.log(readBooks);
+
+  const handleSubmit = ({ page }, { resetForm }) => {
+    if (!isReading) {
+      dispatch(startRead({ bookId, page }));
+      setIsReading(!isReading);
+    } else if (isReading) {
+      dispatch(finishRead({ bookId, page }));
+      setIsReading(!isReading);
+    }
+    resetForm();
+  };
   return (
     <>
-      <Formik initialValues={{ page: '' }} validationSchema={validationSchema}>
+      <Formik
+        initialValues={{ page: '' }}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
         <Form>
           <FilterTitle>{`${isReading ? 'Stop' : 'Start'} page:`}</FilterTitle>
           <LabelWrap>
