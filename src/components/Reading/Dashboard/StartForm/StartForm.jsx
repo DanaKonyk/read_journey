@@ -13,6 +13,7 @@ import { ProgressWrap } from './StartForm.styled';
 import { useBook } from 'hooks/useBook';
 import { useDispatch } from 'react-redux';
 import { finishRead, startRead } from '../../../../redux/books/operations';
+import Statistic from '../Statistic/Statistic';
 
 const validationSchema = Yup.object({
   page: Yup.number().positive().integer().required('Page number is required'),
@@ -53,14 +54,18 @@ const StartForm = () => {
           </BtnFilter>
         </Form>
       </Formik>
-      <ProgressWrap>
-        <h3>Progress</h3>
-        <p>
-          Here you will see when and how much you read. To record, click on the
-          red button above.
-        </p>
-        <img src={star} alt="star" />
-      </ProgressWrap>
+      {readBooks.status === 'unread' ? (
+        <ProgressWrap>
+          <h3>Progress</h3>
+          <p>
+            Here you will see when and how much you read. To record, click on
+            the red button above.
+          </p>
+          <img src={star} alt="star" />
+        </ProgressWrap>
+      ) : (
+        <Statistic />
+      )}
     </>
   );
 };

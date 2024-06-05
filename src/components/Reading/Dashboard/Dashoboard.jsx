@@ -1,4 +1,4 @@
-import { Wrap } from 'components/Recommended/Dashboard/Dashboard.styled';
+import { Wrap } from '../../Reading/Dashboard/Statistic/Statistic.styled';
 import StartForm from './StartForm/StartForm';
 
 const Dashoboard = () => {
