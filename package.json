@@ -12,6 +12,7 @@
     "formik": "^2.4.6",
     "modern-normalize": "^2.0.0",
     "notiflix": "^3.2.7",
+    "rc-progress": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-modal": "^3.16.1",

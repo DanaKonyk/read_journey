@@ -9,9 +9,13 @@ import {
   Line,
   SpinnerWrap,
 } from './Diary.styled';
+import { useDispatch } from 'react-redux';
+import { deleteProgress } from '../../.././../../redux/books/operations';
 
 const DiaryItem = ({ progress }) => {
   const { readBooks } = useBook();
+  const dispatch = useDispatch();
+  const bookId = readBooks._id;
 
   const handleDateConvert = time => {
     const date = new Date(time);
@@ -25,6 +29,10 @@ const DiaryItem = ({ progress }) => {
   const currentProgress = ((currentPage / readBooks.totalPages) * 100).toFixed(
     2
   );
+
+  const handleDelete = readingId => {
+    dispatch(deleteProgress({ bookId, readingId }));
+  };
 
   return (
     <ItemWrap>
@@ -54,7 +62,7 @@ const DiaryItem = ({ progress }) => {
               </svg>
               <h5>{currentPage} pages per hour</h5>
             </div>
-            <BtnDelete type="button">
+            <BtnDelete type="button" onClick={() => handleDelete(progress._id)}>
               <svg>
                 <use xlinkHref={`${icon}#trash-1`} />
               </svg>
