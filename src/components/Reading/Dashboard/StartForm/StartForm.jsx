@@ -15,11 +15,7 @@ import { useDispatch } from 'react-redux';
 import { finishRead, startRead } from '../../../../redux/books/operations';
 
 const validationSchema = Yup.object({
-  pages: Yup.number()
-    .positive()
-    .integer()
-    .truncate()
-    .required('Page number is required'),
+  page: Yup.number().positive().integer().required('Page number is required'),
 });
 
 const StartForm = () => {
@@ -28,14 +24,12 @@ const StartForm = () => {
   const { readBooks } = useBook();
   const bookId = readBooks._id;
 
-  console.log(readBooks);
-
   const handleSubmit = ({ page }, { resetForm }) => {
     if (!isReading) {
-      dispatch(startRead({ bookId, page }));
+      dispatch(startRead({ id: bookId, page }));
       setIsReading(!isReading);
     } else if (isReading) {
-      dispatch(finishRead({ bookId, page }));
+      dispatch(finishRead({ id: bookId, page }));
       setIsReading(!isReading);
     }
     resetForm();
@@ -50,7 +44,7 @@ const StartForm = () => {
         <Form>
           <FilterTitle>{`${isReading ? 'Stop' : 'Start'} page:`}</FilterTitle>
           <LabelWrap>
-            <Label htmlFor="page">Page Number</Label>
+            <Label htmlFor="page">Page Number:</Label>
             <Input type="number" name="page" id="page" />
             <ErrorMessage name="page" component="div" />
           </LabelWrap>

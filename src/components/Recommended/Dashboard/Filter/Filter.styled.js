@@ -52,6 +52,9 @@ export const Input = styled(Field)`
   &[name='pages'] {
     padding-left: 135px;
   }
+  &[name='page'] {
+    padding-inline-start: 111px;
+  }
 
   @media screen and (min-width: 768px) {
     margin-block-end: 14px;

@@ -1,15 +1,33 @@
 import styled from 'styled-components';
 import color from 'stylesheet/GlobalColors';
 
+export const ReadWrap = styled.div`
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    h2 {
+      font-size: 28px;
+      line-height: 1.142;
+    }
+  }
+`;
+
 export const BookWrap = styled.div`
   margin-block-start: 20px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   text-align: center;
   align-items: center;
 
   @media screen and (min-width: 768px) {
     margin-block-start: 32px;
+    gap: 25px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -57,6 +75,30 @@ export const BookWrap = styled.div`
     @media screen and (min-width: 1440px) {
       inline-size: 224px;
       block-size: 340px;
+    }
+  }
+`;
+
+export const BtnStartStop = styled.button`
+  inline-size: 40px;
+  block-size: 40px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: auto;
+  transition: 1s;
+
+  @media screen and (min-width: 768px) {
+    inline-size: 50px;
+    block-size: 50px;
+  }
+  svg {
+    inline-size: 40px;
+    block-size: 40px;
+    transition: 1s;
+    @media screen and (min-width: 768px) {
+      inline-size: 50px;
+      block-size: 50px;
     }
   }
 `;
