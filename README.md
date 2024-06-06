@@ -1,5 +1,3 @@
-Books Reading Application
-
 ## Project Description
 
 This project aims to create an application that offers a comprehensive book
