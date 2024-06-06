@@ -5,13 +5,14 @@ import {
   Label,
   LabelWrap,
 } from 'components/Recommended/Dashboard/Filter/Filter.styled';
-import { ErrorMessage, Form, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addNewBook } from '../../../../redux/books/operations';
 import * as Yup from 'yup';
 import ModalBody from 'components/Modal/Modal';
 import BookIsAdded from 'components/Notification/BookIsAdded';
+import { ErrMsg } from 'components/LoginForm/LoginForm.styled';
 
 const validationSchema = Yup.object({
   title: Yup.string().trim().required('Title is required'),
@@ -50,17 +51,17 @@ const AddBook = () => {
         <LabelWrap>
           <Label htmlFor="title"> Book title:</Label>
           <Input type="text" name="title" id="title" />
-          <ErrorMessage name="title" component="div" />
+          <ErrMsg name="title" component="div" />
         </LabelWrap>
         <LabelWrap>
           <Label htmlFor="author"> The author:</Label>
           <Input type="text" name="author" id="author" />
-          <ErrorMessage name="author" component="div" />
+          <ErrMsg name="author" component="div" />
         </LabelWrap>
         <LabelWrap>
           <Label htmlFor="pages">Number of pages:</Label>
           <Input type="text" name="pages" id="pages" />
-          <ErrorMessage name="pages" component="div" />
+          <ErrMsg name="pages" component="div" />
         </LabelWrap>
         <BtnFilter type="submit">
           <span>Add book</span>

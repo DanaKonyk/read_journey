@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { refreshUser } from '../redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import Loader from './Loader/Loader';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <p>Loading...</p>
+    <Loader />
   ) : (
     <div>
       <Routes>
@@ -64,7 +65,7 @@ export const App = () => {
           <Route
             path="/reading"
             element={
-              <PrivateRoute redirectTo="/reading" component={<ReadingPage />} />
+              <PrivateRoute redirectTo="/library" component={<ReadingPage />} />
             }
           />
         </Route>

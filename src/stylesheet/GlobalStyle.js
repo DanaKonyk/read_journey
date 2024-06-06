@@ -65,4 +65,16 @@ button {
     cursor: pointer;
   }
 
+    ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(102, 101, 100, 0.682);
+    border-radius: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgba(34, 33, 33, 0.682);
+  }
   `;

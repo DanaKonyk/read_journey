@@ -47,14 +47,17 @@ const RegisterForm = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      await dispatch(register(values));
-      resetForm();
-      navigate('/recommended');
-    } catch (error) {
-      console.log(error.message);
-      if (error.response && error.response.status === 409) {
-        Notify.failure('Such email already exists');
+      const result = await dispatch(register(values));
+      if (register.fulfilled.match(result)) {
+        resetForm();
+        navigate('/recommended');
       } else {
+        Notify.failure(
+          result.payload || 'Wrong email or password. Please try again'
+        );
+      }
+    } catch (error) {
+      if (error) {
         Notify.failure('Something went wrong. Please try again');
       }
     }

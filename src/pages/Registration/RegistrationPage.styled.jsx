@@ -10,6 +10,8 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 1439px) {
     flex-direction: row;
     padding: 22px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 `;
 

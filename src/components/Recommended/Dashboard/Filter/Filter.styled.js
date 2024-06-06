@@ -87,7 +87,7 @@ export const BtnFilter = styled.button`
   transition: background-color 350ms linear, border 350ms linear;
 
   &:is(:hover, :focus) {
-    background-color: ${color.white};
+    background-color: ${color.hoverWhite};
     border: 1px solid transparent;
     span {
       color: ${color.lightBlack};

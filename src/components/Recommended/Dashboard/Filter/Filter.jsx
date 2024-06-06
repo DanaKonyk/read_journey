@@ -1,4 +1,4 @@
-import { Form, Formik, ErrorMessage } from 'formik';
+import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import {
   BtnFilter,
@@ -8,6 +8,7 @@ import {
   Label,
   LabelWrap,
 } from './Filter.styled';
+import { ErrMsg } from 'components/LoginForm/LoginForm.styled';
 
 const filterSchema = Yup.object({
   title: Yup.string().trim(),
@@ -25,12 +26,12 @@ const Filter = () => {
         <LabelWrap>
           <Label htmlFor="title">Book title:</Label>
           <Input type="text" name="title" id="title" />
-          <ErrorMessage name="title" component="div" />
+          <ErrMsg name="title" component="div" />
         </LabelWrap>
         <LabelWrap>
           <Label htmlFor="author">The author:</Label>
           <Input type="text" name="author" id="author" />
-          <ErrorMessage name="author" component="div" />
+          <ErrMsg name="author" component="div" />
         </LabelWrap>
         <BtnWrap>
           <BtnFilter type="submit">

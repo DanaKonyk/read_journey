@@ -16,6 +16,12 @@ export const HeaderWrap = styled.header`
     height: 74px;
     margin: 32px 32px 16px 32px;
   }
+
+  @media screen and (min-width: 1440px) {
+    padding: 20px 16px;
+    height: 74px;
+    margin: 32px 83px 16px 83px;
+  }
 `;
 
 export const LogoWrap = styled.div`
@@ -129,7 +135,7 @@ export const MobileBtnLogout = styled.button`
   transition: background-color 350ms linear, border 350ms linear;
 
   &:is(:hover, :focus) {
-    background-color: ${color.white};
+    background-color: ${color.hoverWhite};
     border: 1px solid transparent;
     span {
       color: ${color.lightBlack};

@@ -20,3 +20,11 @@ export const NameWrap = styled.div`
   border-color: ${color.liteWhite};
   margin-right: 8px;
 `;
+
+export const Name = styled.h4`
+  display: none;
+
+  @media screen and (min-width: 1440px) {
+    display: unset;
+  }
+`;

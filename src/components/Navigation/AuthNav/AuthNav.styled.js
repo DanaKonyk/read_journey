@@ -11,7 +11,7 @@ export const Nav = styled.nav`
     color: ${color.white};
   }
   @media screen and (min-width: 1440px) {
-    margin-right: 90px;
+    margin-right: 190px;
   }
 `;
 

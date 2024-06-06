@@ -43,9 +43,13 @@ const LoginForm = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      await dispatch(logIn(values));
-      resetForm();
-      navigate('/recommended');
+      const result = await dispatch(logIn(values));
+      if (logIn.fulfilled.match(result)) {
+        resetForm();
+        navigate('/recommended');
+      } else {
+        Notify.failure('Wrong email or password. Please try again');
+      }
     } catch (error) {
       Notify.failure('Wrong email or password. Please try again');
     }

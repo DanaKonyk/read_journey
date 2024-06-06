@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { clearToken, instance, setToken } from '../../services/api';
+import { Notify } from 'notiflix';
 
 export const register = createAsyncThunk(
   'auth/register',
@@ -9,6 +10,9 @@ export const register = createAsyncThunk(
       setToken(data.token);
       return data;
     } catch (error) {
+      if (error.message === 'Request failed with status code 409') {
+        Notify.failure('Such email already exists');
+      }
       return rejectWithValue(error.message);
     }
   }

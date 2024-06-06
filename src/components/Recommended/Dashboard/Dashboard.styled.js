@@ -11,6 +11,7 @@ export const Wrap = styled.div`
     margin: 16px 32px;
     display: flex;
     gap: 52px;
+    justify-content: space-between;
   }
 
   @media screen and (min-width: 1440px) {

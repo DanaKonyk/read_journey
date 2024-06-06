@@ -11,6 +11,10 @@ import {
 const StatData = () => {
   const { readBooks } = useBook();
 
+  if (!readBooks || !Array.isArray(readBooks.progress)) {
+    return null;
+  }
+
   const pageArr = readBooks.progress.map(item => item.finishPage);
   const finishPage = pageArr.slice(-1);
   const currentProgress = ((finishPage / readBooks.totalPages) * 100).toFixed(

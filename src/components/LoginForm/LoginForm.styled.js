@@ -104,7 +104,7 @@ export const BtnSubmit = styled.button`
 
   &:is(:hover, :focus) {
     background-color: transparent;
-    border: 1px solid ${color.liteWhite};
+    border: 1px solid ${color.hoverWhite};
   }
 
   @media screen and (min-width: 768px) {
