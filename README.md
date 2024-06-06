@@ -1,6 +1,6 @@
-Project Title: Books Reading Application
+Books Reading Application
 
-##Project Description
+## Project Description
 
 This project aims to create an application that offers a comprehensive book
 reading service. The application consists of several main pages:
