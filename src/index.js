@@ -4,6 +4,7 @@ import { App } from './components/App.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from './stylesheet/GlobalStyle.js';
 import './index.css';
+import 'modern-normalize/modern-normalize.css';
 import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store.js';
 import { PersistGate } from 'redux-persist/integration/react';

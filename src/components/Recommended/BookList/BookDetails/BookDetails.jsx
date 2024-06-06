@@ -10,7 +10,9 @@ const BookDetails = ({ book }) => {
   const { newBooks } = useBook();
 
   const handleAddBook = () => {
-    dispatch(addBook);
+    dispatch(addBook({ _id: book._id }));
+    console.log(book._id);
+    console.log(newBooks);
     navigate('/library');
   };
 

@@ -3,10 +3,13 @@ import { instance } from 'services/api';
 
 export const fetchBooks = createAsyncThunk(
   'books/fetchAllBooks',
-  async ({ page, limit }, { rejectWithValue }) => {
+  async (
+    { page = 1, limit = 10, title = '', author = '' },
+    { rejectWithValue }
+  ) => {
     try {
       const { data } = await instance.get(
-        `/books/recommend?page=${page}&limit=${limit}`
+        `/books/recommend?page=${page}&limit=${limit}&title=${title}&author=${author}`
       );
       return data;
     } catch (error) {
@@ -17,9 +20,9 @@ export const fetchBooks = createAsyncThunk(
 
 export const addBook = createAsyncThunk(
   'books/addBook',
-  async ({ id }, { rejectWithValue }) => {
+  async ({ _id }, { rejectWithValue }) => {
     try {
-      const { data } = await instance.post(`/books/add/id=${id}`);
+      const { data } = await instance.post(`/books/add/${_id}`);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

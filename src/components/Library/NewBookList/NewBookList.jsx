@@ -7,7 +7,12 @@ import Select from 'react-select';
 import { useBook } from 'hooks/useBook';
 import NewBookItem from './NewBookItem/NewBookItem';
 import bookIcon from '../../../images/book.png';
-import { BtnWrap, LibraryList, ListWrap } from './NewBookList.styled';
+import {
+  BtnWrap,
+  LibraryList,
+  ListWrap,
+  NoBookWrap,
+} from './NewBookList.styled';
 import { Wrap } from 'components/Recommended/BookList/BookList.styled';
 
 const NewBookList = () => {
@@ -53,13 +58,13 @@ const NewBookList = () => {
             ))}
           </LibraryList>
         ) : (
-          <div>
+          <NoBookWrap>
             <img src={bookIcon} alt="book" />
             <p>
               To start training, add <span>some of your books</span> or from the
               recommended ones
             </p>
-          </div>
+          </NoBookWrap>
         )}
       </ListWrap>
     </Wrap>

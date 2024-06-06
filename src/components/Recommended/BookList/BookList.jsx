@@ -5,6 +5,8 @@ import icon from '../../../images/sprite.svg';
 import BookItem from './BookItem/BookItem';
 import { fetchBooks } from '../../../redux/books/operations';
 import { BooksList, BtnMove, BtnWrap, Wrap } from './BookList.styled';
+import bookIcon from '../../../images/book.png';
+import { NoBookWrap } from 'components/Library/NewBookList/NewBookList.styled';
 
 const BookList = () => {
   const [page, setPage] = useState(1);
@@ -49,11 +51,20 @@ const BookList = () => {
           </BtnMove>
         </div>
       </BtnWrap>
-      <BooksList>
-        {books?.map(book => (
-          <BookItem key={book._id} book={book} />
-        ))}
-      </BooksList>
+      {books?.length !== 0 ? (
+        <BooksList>
+          {books?.map(book => (
+            <BookItem key={book._id} book={book} />
+          ))}
+        </BooksList>
+      ) : (
+        <NoBookWrap>
+          <img src={bookIcon} alt="book" />
+          <p>
+            Unfortunately, we did not find any book according to your criteria.
+          </p>
+        </NoBookWrap>
+      )}
     </Wrap>
   );
 };
