@@ -11,8 +11,6 @@ const BookDetails = ({ book }) => {
 
   const handleAddBook = () => {
     dispatch(addBook({ _id: book._id }));
-    console.log(book._id);
-    console.log(newBooks);
     navigate('/library');
   };
 
