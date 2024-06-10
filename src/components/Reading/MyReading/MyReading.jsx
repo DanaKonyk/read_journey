@@ -7,7 +7,6 @@ import { BookWrap, BtnStartStop, ReadWrap } from './MyReading.styled';
 const MyReading = () => {
   const { readBooks } = useBook();
 
-  console.log(readBooks);
   return (
     <Wrap>
       <ReadWrap>

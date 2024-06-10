@@ -25,7 +25,6 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement('#modal-root');
 const modalRoot = document.querySelector('#modal-root');
 
 const ModalBody = ({ isOpen, onRequestClose, children }) => {

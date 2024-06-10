@@ -17,6 +17,7 @@ import Statistic from '../Statistic/Statistic';
 import ModalBody from 'components/Modal/Modal';
 import BookIsEnded from 'components/Notification/BookIsEnded';
 import { ErrMsg } from 'components/LoginForm/LoginForm.styled';
+import Notiflix from 'notiflix';
 
 const validationSchema = Yup.object({
   page: Yup.number().positive().integer().required('Page number is required'),
@@ -30,6 +31,13 @@ const StartForm = () => {
   const bookId = readBooks._id;
 
   const handleSubmit = ({ page }, { resetForm }) => {
+    if (parseInt(page) > readBooks.totalPages) {
+      Notiflix.Notify.failure(
+        `Please enter a number between 0 and ${readBooks.totalPages}`
+      );
+      return;
+    }
+
     if (!isReading) {
       dispatch(startRead({ id: bookId, page }));
       setIsReading(!isReading);

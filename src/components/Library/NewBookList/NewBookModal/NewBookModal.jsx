@@ -18,7 +18,7 @@ const NewBookModal = ({ books }) => {
       <img src={books.imageUrl ? books.imageUrl : noImage} alt={books.title} />
       <h4>{books.title}</h4>
       <h5>{books.author}</h5>
-      <h6>{books.totalPages}</h6>
+      <h6>{books.totalPages} pages</h6>
       <BtnFilter type="button" onClick={handleClick}>
         <span>Start Reading</span>
       </BtnFilter>
