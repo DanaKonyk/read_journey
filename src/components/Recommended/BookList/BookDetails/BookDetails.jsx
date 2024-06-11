@@ -27,7 +27,7 @@ const BookDetails = ({ book }) => {
           <img src={book.imageUrl} alt={book.title} />
           <h4>{book.title}</h4>
           <h5>{book.author}</h5>
-          <h6>{book.totalPages}</h6>
+          <h6>{book.totalPages} pages</h6>
           <BtnAdd type="button" onClick={handleAddBook}>
             <span>Add to the library</span>
           </BtnAdd>
